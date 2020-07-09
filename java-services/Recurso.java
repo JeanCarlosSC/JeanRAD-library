@@ -8,7 +8,7 @@ import javax.swing.border.Border;
 
 public class Recurso {
 
-    private final Color verdeClaro, verde, verdePastel, morado, moradoClaro;
+    private final Color cyan, cyanOscuro, verdeClaro, verde, verdePastel, morado, moradoClaro;
     private final Font fuenteTitulo, fuenteVersion, fuenteOpcion, fuenteTituloJuego, fuenteSubtitulo;
     private final Cursor cMano;
     private final Border borderGris, borderNegro;
@@ -16,6 +16,11 @@ public class Recurso {
     static private Recurso servicio;
     
     private Recurso(){
+    //Paletas de colores----------------------------------------------------------
+        //paleta estándar
+        cyan = new Color(72, 206, 247);
+        cyanOscuro = new Color(70, 147, 171);
+        
         //paleta verde pastel complementario
         verdeClaro = new Color(193, 255, 171);
         verde = new Color(122, 179, 102);
@@ -41,14 +46,13 @@ public class Recurso {
         borderGris = BorderFactory.createLineBorder(Color.LIGHT_GRAY, 2, true);
     }
     
-//Paletas de colores----------------------------------------------------------
-    //paleta estándar
+
     public Color getColorCyan(){
-        return new Color(72, 206, 247);
+        return cyan;
     }
     
     public Color getColorCyanOscuro(){
-        return new Color(70, 147, 171);
+        return cyanOscuro;
     }
     
     public Color getColorVerdeClaro(){
@@ -103,4 +107,9 @@ public class Recurso {
         return borderNegro;
     }
 
+    public static Recurso getService(){
+        if(servicio == null)
+            servicio = new Recurso();
+        return servicio;
+    }
 }
