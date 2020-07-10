@@ -16,8 +16,9 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-public class Interfaz{
+public final class Interfaz{
     
+
     private Interfaz(){
     }
     
