@@ -1,4 +1,4 @@
-package services;
+package libraries;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -23,9 +23,7 @@ public final class Interfaz{
     }
     
     public static JPanel getPanel(int x, int y, int ancho, int largo, Color color){
-        JPanel panel = new JPanel();
-        panel.setBounds(x, y, ancho, largo);
-        panel.setLayout(null);
+        JPanel panel = getPanel(x, y, ancho, largo);
         panel.setBackground(color);
         return panel;
     }
@@ -37,7 +35,7 @@ public final class Interfaz{
         return panel;
     }
     
-    public static JLabel getLabelIcon(Icon icono, int x, int y){
+    public static JLabel getLabel(Icon icono, int x, int y){
         JLabel label = new JLabel();
         label.setSize(icono.getIconWidth(), icono.getIconHeight());
         label.setLocation(x, y);
@@ -45,7 +43,7 @@ public final class Interfaz{
         return label;
     }
     
-    public static JLabel getLabelText(String cadena, int x, int y, int ancho, int alto, Color colorFuente,Font fuente){        
+    public static JLabel getLabel(String cadena, int x, int y, int ancho, int alto, Color colorFuente, Font fuente){        
         JLabel label= new JLabel(cadena);
         label.setSize(ancho, alto);
         label.setLocation(x, y);

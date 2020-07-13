@@ -1,8 +1,8 @@
 package app.services;
 
-public class Logical{
+public final class Logica{
     
-    private Logical(){
+    private Logica(){
     }
 
     /**
@@ -11,12 +11,12 @@ public class Logical{
      * @return 
      */
     public static boolean isNumeric(String cadena){
-	try {
-		Integer.parseInt(cadena);
-		return true;
-	} catch (NumberFormatException nfe){
-		return false;
-	}
+    	try {
+    		Integer.parseInt(cadena);
+    		return true;
+    	} catch (NumberFormatException nfe){
+    		return false;
+    	}
     }
     
 }
