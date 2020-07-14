@@ -8,7 +8,7 @@ import javax.swing.border.Border;
 
 public final class Recurso {
 
-    private static final Color 
+    public static final Color 
     //Paletas de colores--------------------------------------------------------
         //paleta estándar
         COLOR_CYAN = new Color(72, 206, 247),
@@ -21,7 +21,7 @@ public final class Recurso {
         COLOR_MORADO = new Color(179, 84, 167),
         COLOR_MORADO_CLARO = new Color(255, 171, 245);
     
-    private static final Font 
+    public static final Font 
     //Fuentes-------------------------------------------------------------------
         //fuentes estándar
         FUENTE_TITULO = new Font("Gill Sans MT Condensed", Font.PLAIN, 64),
@@ -35,7 +35,7 @@ public final class Recurso {
         //cursores estándar
         CURSOR_MANO = new Cursor(Cursor.HAND_CURSOR);;
     
-    private static final Border
+    public static final Border
     //Bordes--------------------------------------------------------------------
         //bordes estándar
         BORDE_NEGRO = BorderFactory.createLineBorder(Color.black, 2, true),
