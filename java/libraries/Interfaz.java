@@ -43,6 +43,12 @@ public final class Interfaz{
         return label;
     }
     
+    public static JLabel getLabel(Icon icono, int x, int y, Cursor cursor){
+        JLabel label = getLabel(icono, x, y);
+        label.setCursor(cursor);
+        return label;
+    }
+    
     public static JLabel getLabel(String cadena, int x, int y, int ancho, int alto, Color colorFuente, Font fuente){        
         JLabel label= new JLabel(cadena);
         label.setSize(ancho, alto);
@@ -67,7 +73,18 @@ public final class Interfaz{
         frame.setVisible(true);
     }
     
-    public static JButton getJButton(String texto, int x, int y, int ancho, int alto, Cursor cursor, Icon imagen, Font fuente, Color colorFondo,
+    public static JButton getButton(Icon icono, int x, int y, Cursor cursor){
+        JButton button = new JButton();
+        button.setContentAreaFilled(false);
+        button.setBorder(null);
+        button.setIcon(icono);
+        button.setSize(icono.getIconWidth(), icono.getIconHeight());
+        button.setLocation(x, y);
+        button.setCursor(cursor);
+        return button;
+    }
+    
+    public static JButton getButton(String texto, int x, int y, int ancho, int alto, Cursor cursor, Icon imagen, Font fuente, Color colorFondo,
             Color colorFuente,Border borde, String direccion, boolean esSolido){
         
         JButton button= new JButton(texto);
@@ -94,7 +111,7 @@ public final class Interfaz{
         return button;
     }
     
-    public static JButton getJButtonIcon(Icon icono, int x, int y, Cursor cursor, String direccion){
+    public static JButton getButton(Icon icono, int x, int y, Cursor cursor, String direccion){
         JButton button = new JButton();
         button.setSize(icono.getIconWidth(), icono.getIconHeight());
         button.setLocation(x, y);
