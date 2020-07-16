@@ -58,8 +58,8 @@ public final class Interfaz{
         return label;
     }
     
-    public static Icon getIcon(Object o, String ruta, int width, int height){
-        ImageIcon iIcono = new ImageIcon(o.getClass().getResource(ruta));
+    public static Icon getIcon(String ruta, int width, int height){
+        ImageIcon iIcono = new ImageIcon(Icon.class.getResource(ruta));
         Icon icono = new ImageIcon(iIcono.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT));
         return icono;
     }
