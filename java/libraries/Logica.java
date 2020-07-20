@@ -1,7 +1,10 @@
-package app.services;
+package libraries;
 
 public final class Logica{
     
+    /**
+     * No permite instanciar objetos
+     */
     private Logica(){
     }
 
@@ -11,11 +14,11 @@ public final class Logica{
      * @return 
      */
     public static boolean isNumeric(String cadena){
-    	try {
-    		Integer.parseInt(cadena);
-    		return true;
-    	} catch (NumberFormatException nfe){
-    		return false;
+    	try{
+            Integer.parseInt(cadena);
+            return true;
+    	}catch(NumberFormatException nfe){
+            return false;
     	}
     }
     
