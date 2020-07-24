@@ -1,14 +1,14 @@
-package libraries;
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 
-public final class ObjDecorator {
+public class RecursoService {
 
-    public static final Color 
+    private static RecursoService service;
+
+    public final Color 
     //Paletas de colores--------------------------------------------------------
         //estandat
         BLACK = new Color(0, 0, 0),
@@ -29,7 +29,7 @@ public final class ObjDecorator {
         AZUL_GRIS_OSCURO = new Color(58, 117, 181),
         AZUL_GRIS = new Color(82, 125, 181);
         
-    public static final Font 
+    public final Font 
     //Fuentes-------------------------------------------------------------------
         //fuentes estandar
         FUENTE_TITULO = new Font("Gill Sans MT Condensed", Font.PLAIN, 64),
@@ -38,7 +38,7 @@ public final class ObjDecorator {
         FUENTE_VERSION = new Font("Arial", Font.PLAIN, 14),
         FUENTE_OPCION = new Font("Arial Narrow", Font.PLAIN, 18);
     
-    public static final Cursor
+    public final Cursor
     //Cursores------------------------------------------------------------------
         //cursores estandar
         CURSOR_DEFECTO = new Cursor(0),
@@ -50,13 +50,19 @@ public final class ObjDecorator {
         CURSOR_MANO = new Cursor(12),
         CURSOR_MOVER = new Cursor(13);
     
-    public static final Border
+    public final Border
     //Bordes--------------------------------------------------------------------
         //bordes estandar
         BORDE_NEGRO = BorderFactory.createLineBorder(Color.black, 2, true),
         BORDE_GRIS = BorderFactory.createLineBorder(Color.LIGHT_GRAY, 2, true);
     
     private ObjDecorator(){
+    }
+
+    public RecursoService getService(){
+        if(service == null)
+            service = new RecursoService();
+        return service;
     }
     
 }

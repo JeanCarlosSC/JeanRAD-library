@@ -1,5 +1,3 @@
-package libraries;
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -17,41 +15,38 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-public final class ObjGraphic{
+public final class GraphicService {
     
+    private static GraphicService service;
+
     private ObjGraphic(){
     }
     
-    public static Icon getIcon(String ruta){
-        Icon icono = new ImageIcon(Icon.class.getResource(ruta));
-        return icono;
-    }
-    
-    public static Icon getIcon(String ruta, int width, int height){
+    public Icon getIcon(String ruta, int width, int height){
         ImageIcon iIcono = new ImageIcon(Icon.class.getResource(ruta));
         Icon icono = new ImageIcon(iIcono.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT));
         return icono;
     }
     
-    public static JPanel setPanel(JPanel panel, int x, int y, int ancho, int largo){
+    public JPanel setPanel(JPanel panel, int x, int y, int ancho, int largo){
         panel.setBounds(x, y, ancho, largo);
         panel.setLayout(null);
         return panel;
     }
     
-    public static JPanel getPanel(int x, int y, int ancho, int largo){
+    public JPanel getPanel(int x, int y, int ancho, int largo){
         JPanel panel = new JPanel();
         setPanel(panel, x, y, ancho, largo);
         return panel;
     }
     
-    public static JPanel getPanel(int x, int y, int ancho, int largo, Color color){
+    public JPanel getPanel(int x, int y, int ancho, int largo, Color color){
         JPanel panel = getPanel(x, y, ancho, largo);
         panel.setBackground(color);
         return panel;
     }
     
-    public static JLabel getLabel(Icon icono, int x, int y){
+    public JLabel getLabel(Icon icono, int x, int y){
         JLabel label = new JLabel();
         label.setSize(icono.getIconWidth(), icono.getIconHeight());
         label.setLocation(x, y);
@@ -59,13 +54,13 @@ public final class ObjGraphic{
         return label;
     }
     
-    public static JLabel getLabel(Icon icono, int x, int y, Cursor cursor){
+    public JLabel getLabel(Icon icono, int x, int y, Cursor cursor){
         JLabel label = getLabel(icono, x, y);
         label.setCursor(cursor);
         return label;
     }
     
-    public static JLabel getLabel(String cadena, int x, int y, int ancho, int alto, Color colorFuente, Font fuente){        
+    public JLabel getLabel(String cadena, int x, int y, int ancho, int alto, Color colorFuente, Font fuente){        
         JLabel label= new JLabel(cadena);
         label.setSize(ancho, alto);
         label.setLocation(x, y);
@@ -74,7 +69,7 @@ public final class ObjGraphic{
         return label;
     }
     
-    public static void setFrame(JFrame frame, int ancho, int alto, String titulo){
+    public void setFrame(JFrame frame, int ancho, int alto, String titulo){
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setTitle(titulo);
         frame.setSize(ancho, alto);
@@ -83,13 +78,13 @@ public final class ObjGraphic{
         frame.setVisible(true);
     }
     
-    public static JFrame getFrame(int ancho, int alto, String titulo){
+    public JFrame getFrame(int ancho, int alto, String titulo){
         JFrame frame = new JFrame();
         setFrame(frame, ancho, alto, titulo);
         return frame;
     }
     
-    public static JButton getButton(int x, int y, Icon icono, Cursor cursor){
+    public JButton getButton(int x, int y, Icon icono, Cursor cursor){
         JButton button = new JButton();
         button.setContentAreaFilled(false);
         button.setBorder(null);
@@ -103,7 +98,7 @@ public final class ObjGraphic{
         return button;
     }
     
-    public static JButton getButton(int x, int y, int ancho, int alto, Cursor cursor, Icon icono, Color colorFondo, boolean esSolido){
+    public JButton getButton(int x, int y, int ancho, int alto, Cursor cursor, Icon icono, Color colorFondo, boolean esSolido){
         JButton button = getButton(x, y, icono, cursor);
         button.setSize(ancho, alto);
         button.setBackground(colorFondo);
@@ -111,7 +106,7 @@ public final class ObjGraphic{
         return button;
     }
     
-    public static JButton getButton(String texto, int x, int y, int ancho, int alto, Cursor cursor, Icon icono, Font fuente, Color colorFondo,
+    public JButton getButton(String texto, int x, int y, int ancho, int alto, Cursor cursor, Icon icono, Font fuente, Color colorFondo,
             Color colorFuente,Border borde, String direccion, boolean esSolido){
         
         JButton button = getButton(x, y, ancho, alto, cursor, icono, colorFondo, esSolido);
@@ -133,7 +128,7 @@ public final class ObjGraphic{
         return button;
     }
     
-    public static JTextField getJTextField(int x, int y, int width, int height, String text, Color foreground, Color background, Color caret,
+    public JTextField getJTextField(int x, int y, int width, int height, String text, Color foreground, Color background, Color caret,
             String alignment){
         JTextField textField = new JTextField(text);
         textField.setSize(width, height);
@@ -161,4 +156,10 @@ public final class ObjGraphic{
         return textField;
     }
     
+    public GraphicService getService(){
+        if(service == null)
+            service = new GraphicService();
+        return service;
+    }
+
 }
