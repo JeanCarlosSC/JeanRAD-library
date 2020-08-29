@@ -1,3 +1,5 @@
+package services.graphicService;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -15,15 +17,15 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-public final class GraphicService {
+public final class GraphicBuilder {
     
-    private static GraphicService service;
+    private static GraphicBuilder service;
 
-    private ObjGraphic(){
+    private GraphicBuilder(){
     }
     
-    public Icon getIcon(String ruta, int width, int height){
-        ImageIcon iIcono = new ImageIcon(Icon.class.getResource(ruta));
+    public Icon getIcon(String path, int width, int height){
+        ImageIcon iIcono = new ImageIcon(Icon.class.getResource(path));
         Icon icono = new ImageIcon(iIcono.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT));
         return icono;
     }
@@ -46,11 +48,16 @@ public final class GraphicService {
         return panel;
     }
     
-    public JLabel getLabel(Icon icono, int x, int y){
-        JLabel label = new JLabel();
+    public JLabel setLabel(JLabel label, Icon icono, int x, int y){
         label.setSize(icono.getIconWidth(), icono.getIconHeight());
         label.setLocation(x, y);
         label.setIcon(icono);
+        return label;
+    }
+    
+    public JLabel getLabel(Icon icono, int x, int y){
+        JLabel label = new JLabel();
+        setLabel(label, icono, x, y);
         return label;
     }
     
@@ -156,9 +163,9 @@ public final class GraphicService {
         return textField;
     }
     
-    public GraphicService getService(){
+    public static GraphicBuilder getService(){
         if(service == null)
-            service = new GraphicService();
+            service = new GraphicBuilder();
         return service;
     }
 

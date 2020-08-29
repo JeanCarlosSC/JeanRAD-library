@@ -1,12 +1,14 @@
+package services.graphicService;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 
-public class RecursoService {
+public class GraphicResource {
 
-    private static RecursoService service;
+    private static GraphicResource service;
 
     public final Color 
     //Paletas de colores--------------------------------------------------------
@@ -56,12 +58,12 @@ public class RecursoService {
         BORDE_NEGRO = BorderFactory.createLineBorder(Color.black, 2, true),
         BORDE_GRIS = BorderFactory.createLineBorder(Color.LIGHT_GRAY, 2, true);
     
-    private ObjDecorator(){
+    private GraphicResource(){
     }
 
-    public RecursoService getService(){
+    public static GraphicResource getService(){
         if(service == null)
-            service = new RecursoService();
+            service = new GraphicResource();
         return service;
     }
     
