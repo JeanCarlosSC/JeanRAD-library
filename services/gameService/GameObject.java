@@ -1,5 +1,6 @@
 package services.gameService;
 
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -8,12 +9,25 @@ import javax.swing.JPanel;
  */
 public abstract class GameObject extends JPanel{
     
-    public GameObject(int x, int y){
+    private GameSprite sprite;
+    
+    public GameObject(int x, int y, int width, int height, GameSprite sprite){
+        this.sprite = sprite;
+        if(sprite != null)
+            add(this.sprite);
+        
         setLocation(x, y);
+        setSize(width, height);
         setLayout(null);
-        setBackground(null);
+        setBackground(new Color(0, 0, 0, 1));
     }
     
-    public abstract void update();
+    public void nextIndex(){
+        sprite.nextIndex();
+    }
+    
+    public void run(){
+        nextIndex();
+    }
     
 }
