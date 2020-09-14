@@ -1,9 +1,7 @@
-package services.gameService;
+package services.gameService
 
 /**
  *
  * @author Jean Carlos Santoya Cabrera jeancarlosodi@gmail.com
  */
-public class GameMask {
-    
-}
+class GameMask 
