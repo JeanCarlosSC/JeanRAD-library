@@ -4,111 +4,110 @@ import java.awt.*
 import javax.swing.*
 import javax.swing.border.Border
 
-class GraphicBuilder private constructor() {
+fun getScaledIcon(path: String, width: Int, height: Int): ImageIcon {
+    val iIcon = ImageIcon(path)
+    return ImageIcon(iIcon.image.getScaledInstance(width, height, Image.SCALE_DEFAULT))
+}
 
-    fun getScaledIcon(path: String, width: Int, height: Int): Icon {
-        val iIcon = ImageIcon(path)
-        return ImageIcon(iIcon.image.getScaledInstance(width, height, Image.SCALE_DEFAULT))
-    }
+fun JPanel.setProperties(x: Int, y: Int, width: Int, height: Int, color: Color?, layoutManager: LayoutManager?, border: Border? = null) {
+    this.setBounds(x, y, width, height)
+    this.background = color
+    this.border = border
+    this.layout = layoutManager
+}
 
-    fun setJPanel(panel: JPanel, x: Int, y: Int, width: Int, height: Int, color: Color?) {
-        panel.setBounds(x, y, width, height)
-        panel.background = color
-    }
-
-    fun setJLabel(label: JLabel, x: Int, y: Int, icon: Icon, cursor: Cursor? = null) {
-        label.setSize(icon.iconWidth, icon.iconHeight)
-        label.setLocation(x, y)
-        label.icon = icon
-        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-        label.cursor = cursor
-    }
-
-    fun setJLabel(label: JLabel, x: Int, y: Int, width: Int, height: Int, str: String?, fontColor: Color?, font: Font?) {
-        label.setBounds(x, y, width, height)
-        label.foreground = fontColor
-        label.font = font
-        label.text = str
-    }
-
-    fun setJFrame(frame: JFrame, width: Int, height: Int, title: String?, background: Color? = null) {
-        frame.setSize(width, height)
-        frame.setLocationRelativeTo(null)
-        frame.defaultCloseOperation = WindowConstants.EXIT_ON_CLOSE
-        frame.title = title
-        frame.background = background
-        frame.isVisible = true
-    }
-
-    /**
-     * Icon button
-     */
+/**
+ * icon label
+ */
+fun JLabel.setProperties(x: Int, y: Int, icon: Icon, cursor: Cursor? = null) {
+    this.setSize(icon.iconWidth, icon.iconHeight)
+    this.setLocation(x, y)
+    this.icon = icon
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    fun setJButton(button: JButton, x: Int, y: Int, icon: Icon?, cursor: Cursor?) {
-        button.setLocation(x, y)
-        button.isContentAreaFilled = false
-        button.border = null
-        button.cursor = cursor
-        button.isFocusable = false
-        if (icon != null) {
-            button.setSize(icon.iconWidth, icon.iconHeight)
-            button.icon = icon
-        }
+    this.cursor = cursor
+}
+
+/**
+ * text label
+ */
+fun JLabel.setProperties(x: Int, y: Int, width: Int, height: Int, str: String?, fontColor: Color?, font: Font?, hAlignment: String? = "LEFT") {
+    this.setBounds(x, y, width, height)
+    this.foreground = fontColor
+    this.font = font
+    this.text = str
+    this.horizontalAlignment = when(hAlignment) {
+        "CENTER" -> SwingConstants.CENTER
+        "RIGHT" -> SwingConstants.RIGHT
+        else -> SwingConstants.LEFT
+    }
+}
+
+fun JFrame.setProperties(width: Int, height: Int, layoutManager: LayoutManager?, background: Color? = null, title: String? = null) {
+    this.setSize(width, height)
+    this.setLocationRelativeTo(null)
+    this.defaultCloseOperation = WindowConstants.EXIT_ON_CLOSE
+    this.title = title
+    this.layout = layout
+    this.background = background
+    this.isVisible = true
+}
+
+/**
+ * Icon button
+ */
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+fun JButton.setProperties(x: Int, y: Int, icon: Icon?, cursor: Cursor?) {
+    this.setLocation(x, y)
+    this.isContentAreaFilled = false
+    this.border = null
+    this.cursor = cursor
+    this.isFocusable = false
+    if (icon != null) {
+        this.setSize(icon.iconWidth, icon.iconHeight)
+        this.icon = icon
+    }
+}
+
+/**
+ * Button filled with icon
+ */
+fun JButton.setProperties( x: Int,y: Int, width: Int, height: Int, cursor: Cursor?, background: Color?, isSolid: Boolean, icon: Icon? = null) {
+    this.setProperties(x, y, icon, cursor)
+    this.setSize(width, height)
+    this.background = background
+    this.isContentAreaFilled = isSolid
+}
+
+/**
+ * Text button
+ */
+fun JButton.setProperties(text: String?, x: Int, y: Int, width: Int, height: Int, cursor: Cursor?, font: Font?, background: Color?, foreground: Color?,
+          border: Border?, alignment: String?, isSolid: Boolean) {
+    setProperties(x, y, width, height, cursor, background, isSolid)
+    this.text = text
+    this.font = font
+    this.foreground = foreground
+    this.border = border
+    this.isContentAreaFilled = isSolid
+    this.horizontalAlignment = when (alignment) {
+        "LEFT" -> SwingConstants.LEFT
+        "RIGHT" -> SwingConstants.RIGHT
+        else -> SwingConstants.CENTER
+    }
+}
+
+fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, text: String? = "", foreground: Color? = BLACK, background: Color? = WHITE,
+         caret: Color? = BLACK, border: Border? = null, hAlignment: String? = "LEFT") {
+    this.setBounds(x, y, width, height)
+    this.text = text
+    this.foreground = foreground
+    this.background = background
+    this.caretColor = caret
+    this.border = border
+    this.horizontalAlignment = when (hAlignment) {
+        "CENTER" -> SwingConstants.CENTER
+        "RIGHT" ->  SwingConstants.RIGHT
+        else ->  SwingConstants.LEFT
     }
 
-    /**
-     * Button filled with icon
-     */
-    fun setJButton(button: JButton, x: Int,y: Int, width: Int, height: Int, cursor: Cursor?, background: Color?, isSolid: Boolean, icon: Icon? = null) {
-        setJButton(button, x, y, icon, cursor)
-        button.setSize(width, height)
-        button.background = background
-        button.isContentAreaFilled = isSolid
-    }
-
-    /**
-     * Text button
-     */
-    fun setJButton(button: JButton, text: String?, x: Int, y: Int, width: Int, height: Int, cursor: Cursor?, font: Font?,
-                   background: Color?, foreground: Color?, border: Border?, alignment: String?, isSolid: Boolean) {
-
-        setJButton(button, x, y, width, height, cursor, background, isSolid)
-        button.text = text
-        button.font = font
-        button.foreground = foreground
-        button.border = border
-        button.isContentAreaFilled = isSolid
-        button.horizontalAlignment = when (alignment) {
-            "LEFT" -> SwingConstants.LEFT
-            "RIGHT" -> SwingConstants.RIGHT
-            else -> SwingConstants.CENTER
-        }
-    }
-
-    fun setJTextField(textField: JTextField, x: Int, y: Int, width: Int, height: Int, text: String?, foreground: Color?, background: Color?,
-        caret: Color?, border: Border?, alignment: String?) {
-
-        textField.setBounds(x, y, width, height)
-        textField.text = text
-        textField.foreground = foreground
-        textField.background = background
-        textField.caretColor = caret
-        textField.border = border
-        textField.horizontalAlignment = when (alignment) {
-            "CENTER" -> 0
-            "RIGHT" ->  4
-            "TOP" ->  1
-            "BOTTOM" ->  3
-            else ->  2
-        }
-    }
-
-    companion object {
-        var service: GraphicBuilder? = null
-            get() {
-                if (field == null) field = GraphicBuilder()
-                return field
-            }
-            private set
-    }
 }
