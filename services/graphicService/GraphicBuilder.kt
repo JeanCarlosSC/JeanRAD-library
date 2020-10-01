@@ -1,6 +1,8 @@
 package services.graphicService
 
 import java.awt.*
+import java.awt.event.MouseEvent
+import java.awt.event.MouseListener
 import javax.swing.*
 import javax.swing.border.Border
 import javax.xml.stream.Location
@@ -77,31 +79,50 @@ fun JButton.setProperties(x: Int, y: Int, icon: Icon?, cursor: Cursor? = handCur
 }
 
 /**
- * Button filled with icon
+ * text button
+ */
+fun JButton.setProperties(x: Int, y: Int, width: Int, height: Int, text: String?, cursor: Cursor? = handCursor, font: Font? = fontButton,
+                          background: Color? = darkGray, foreground: Color? = darkWhite, border: Border? = semiDarkGray2Border,
+                          alignment: String? = "CENTER", isSolid: Boolean = true) {
+    setProperties(x, y, width, height, cursor, background, isSolid)
+    this.text = text
+    this.font = font
+    this.foreground = foreground
+    this.border = border
+    this.horizontalAlignment = when (alignment) {
+        "LEFT" -> SwingConstants.LEFT
+        "RIGHT" -> SwingConstants.RIGHT
+        else -> SwingConstants.CENTER
+    }
+
+    this.addMouseListener(object : MouseListener {
+        override fun mouseClicked(e: MouseEvent) {
+        }
+
+        override fun mousePressed(e: MouseEvent) {
+        }
+
+        override fun mouseReleased(e: MouseEvent) {
+        }
+
+        override fun mouseEntered(e: MouseEvent) {
+            this@setProperties.background = semiDarkGray
+        }
+
+        override fun mouseExited(e: MouseEvent) {
+            this@setProperties.background = darkGray
+        }
+    })
+}
+
+/**
+ * text button filled with icon
  */
 fun JButton.setProperties( x: Int,y: Int, width: Int, height: Int, cursor: Cursor?, background: Color?, isSolid: Boolean, icon: Icon? = null) {
     this.setProperties(x, y, icon, cursor)
     this.setSize(width, height)
     this.background = background
     this.isContentAreaFilled = isSolid
-}
-
-/**
- * Text button
- */
-fun JButton.setProperties(text: String?, x: Int, y: Int, width: Int, height: Int, cursor: Cursor?, font: Font?, background: Color?, foreground: Color?,
-                          border: Border?, alignment: String?, isSolid: Boolean) {
-    setProperties(x, y, width, height, cursor, background, isSolid)
-    this.text = text
-    this.font = font
-    this.foreground = foreground
-    this.border = border
-    this.isContentAreaFilled = isSolid
-    this.horizontalAlignment = when (alignment) {
-        "LEFT" -> SwingConstants.LEFT
-        "RIGHT" -> SwingConstants.RIGHT
-        else -> SwingConstants.CENTER
-    }
 }
 
 fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, text: String? = "", foreground: Color? = black, font: Font?,

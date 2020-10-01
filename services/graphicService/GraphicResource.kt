@@ -55,11 +55,12 @@ val semiDarkWhite = Color(210, 210, 210)
 //-----------------------------------------FONTS------------------------------------------------------------------------
 //standard
 val fontTitle = Font("Gill Sans MT Condensed", Font.PLAIN, 64)
-val fontTitleProblem = Font("Arial", Font.BOLD, 24)
+val fontTitle2 = Font("Arial", Font.BOLD, 24)
+val fontButton = Font("Arial", Font.PLAIN, 18)
 val fontSubtitle = Font("Gill Sans MT Condensed", Font.PLAIN, 32)
 val fontTitleGame = Font("Imprint MT Shadow", Font.PLAIN, 72)
 val fontVersion = Font("Arial", Font.PLAIN, 14)
-val fontOption = Font("Arial Narrow", Font.PLAIN, 18)
+val fontText = Font("Arial Narrow", Font.PLAIN, 18)
 
 //----------------------------------------CURSORS-----------------------------------------------------------------------
 //standard
@@ -74,8 +75,8 @@ val moveCursor = Cursor(13)
 
 //----------------------------------------BORDERS-----------------------------------------------------------------------
 //standard
-val blackBorder: Border = BorderFactory.createLineBorder(black, 2, true)
+val blackBorder: Border = BorderFactory.createLineBorder(black, 2, false)
 val blackBorderTransparent: Border = BorderFactory.createLineBorder(blackTransparent, 2, false)
-val grayBorder: Border = BorderFactory.createLineBorder(gray, 2, true)
-val semiDarkGray2Border: Border = BorderFactory.createLineBorder(semiDarkGray2, 2, true)
-val darkGrayBorder: Border = BorderFactory.createLineBorder(darkGray, 2, true)
+val grayBorder: Border = BorderFactory.createLineBorder(gray, 2, false)
+val semiDarkGray2Border: Border = BorderFactory.createLineBorder(semiDarkGray2, 2, false)
+val darkGrayBorder: Border = BorderFactory.createLineBorder(darkGray, 2, false)
