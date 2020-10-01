@@ -37,7 +37,7 @@ val greenCake = Color(212, 255, 196)
 val purple = Color(179, 84, 167)
 val lightPurple = Color(255, 171, 245)
 
-//specials
+//special palette
 val cyan = Color(72, 206, 247)
 val darkCyan = Color(70, 147, 171)
 val darkOcher = Color(169, 105, 0)
@@ -45,7 +45,9 @@ val mustard = Color(255, 225, 0)
 val darkBlueGray = Color(58, 117, 181)
 val blueGray = Color(82, 125, 181)
 
-//others
+//others and specials
+val blackTransparent = Color(0F, 0F, 0F, 0.8F)
+val transparent = Color(0F, 0F, 0F, 0F)
 val superLightGray = Color(120, 120, 120)
 val megaDarkWhite = Color(180, 180, 180)
 val semiDarkWhite = Color(210, 210, 210)
@@ -73,6 +75,7 @@ val moveCursor = Cursor(13)
 //----------------------------------------BORDERS-----------------------------------------------------------------------
 //standard
 val blackBorder: Border = BorderFactory.createLineBorder(black, 2, true)
+val blackBorderTransparent: Border = BorderFactory.createLineBorder(blackTransparent, 2, false)
 val grayBorder: Border = BorderFactory.createLineBorder(gray, 2, true)
 val semiDarkGray2Border: Border = BorderFactory.createLineBorder(semiDarkGray2, 2, true)
 val darkGrayBorder: Border = BorderFactory.createLineBorder(darkGray, 2, true)

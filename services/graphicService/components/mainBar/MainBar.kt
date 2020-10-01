@@ -27,7 +27,7 @@ class MainBar(screenWidth: Int, jFrame: JFrame): JPanel(), MouseListener, MouseM
     private var y0 = 0
 
     init {
-        mainPanel.setProperties(0, 0, screenWidth, 28, semiDarkGrayBlue, null)
+        mainPanel.setProperties(0, 0, screenWidth, 27, semiDarkGrayBlue, null)
         mainPanel.addMouseMotionListener(this)
         add(mainPanel)
 
@@ -47,14 +47,8 @@ class MainBar(screenWidth: Int, jFrame: JFrame): JPanel(), MouseListener, MouseM
 
     override fun mouseClicked(e: MouseEvent?) {
         if(e?.source == btExit) {
-            jFrame.isVisible = false
-            JOptionPane.showMessageDialog(
-                null,
-                "Application closed successfully",
-                "Exit",
-                JOptionPane.INFORMATION_MESSAGE
-            )
-            exitProcess(0)
+            if(JOptionPane.showConfirmDialog(null, "Desea salir?") == 0)
+                exitProcess(0)
         }
     }
 

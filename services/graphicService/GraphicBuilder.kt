@@ -3,6 +3,19 @@ package services.graphicService
 import java.awt.*
 import javax.swing.*
 import javax.swing.border.Border
+import javax.xml.stream.Location
+
+fun JFrame.setProperties(width: Int = 1280, height: Int = 720, background: Color? = semiDarkGrayBlue, undecorated: Boolean = true,
+                         border: Border? = blackBorderTransparent, relativeLocation: Component? = null, visible: Boolean = true,
+                         layoutManager: LayoutManager? = null) {
+    this.setSize(width, height)
+    this.setLocationRelativeTo(relativeLocation)
+    this.contentPane.background = background
+    this.isUndecorated = undecorated
+    this.rootPane.border = border
+    this.layout = layoutManager
+    this.isVisible = visible
+}
 
 fun JPanel.setProperties(x: Int, y: Int, width: Int, height: Int, color: Color?, layoutManager: LayoutManager?, border: Border? = null) {
     this.setBounds(x, y, width, height)
@@ -77,7 +90,7 @@ fun JButton.setProperties( x: Int,y: Int, width: Int, height: Int, cursor: Curso
  * Text button
  */
 fun JButton.setProperties(text: String?, x: Int, y: Int, width: Int, height: Int, cursor: Cursor?, font: Font?, background: Color?, foreground: Color?,
-        border: Border?, alignment: String?, isSolid: Boolean) {
+                          border: Border?, alignment: String?, isSolid: Boolean) {
     setProperties(x, y, width, height, cursor, background, isSolid)
     this.text = text
     this.font = font
@@ -91,27 +104,16 @@ fun JButton.setProperties(text: String?, x: Int, y: Int, width: Int, height: Int
     }
 }
 
-fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, text: String? = "", foreground: Color? = black, background: Color? = white,
-                             caret: Color? = black, border: Border? = null, hAlignment: String? = "LEFT") {
+fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, text: String? = "", foreground: Color? = black, font: Font?,
+                             editable: Boolean, border: Border? = null) {
     this.setBounds(x, y, width, height)
     this.text = text
+    this.isEditable = editable
     this.foreground = foreground
-    this.background = background
-    this.caretColor = caret
+    this.font = font
+    this.background = transparent
+    this.caretColor = foreground
     this.border = border
-    this.horizontalAlignment = when (hAlignment) {
-        "CENTER" -> SwingConstants.CENTER
-        "RIGHT" ->  SwingConstants.RIGHT
-        else ->  SwingConstants.LEFT
-    }
-}
-
-fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, text: String? = null, foreground: Color? = black, background: Color? = white,
-                            caret: Color? = black, border: Border? = null) {
-    this.setBounds(x, y, width, height)
-    this.text = text
-    this.foreground = foreground
-    this.background = background
-    this.caretColor = caret
-    this.border = border
+    this.wrapStyleWord = true
+    this.lineWrap = true
 }
