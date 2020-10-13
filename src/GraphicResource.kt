@@ -1,4 +1,4 @@
-package services.graphicService
+package libraries.`JeanRAD-library`
 
 import java.awt.Color
 import java.awt.Cursor
@@ -56,11 +56,13 @@ val semiDarkWhite = Color(210, 210, 210)
 //standard
 val fontTitle = Font("Gill Sans MT Condensed", Font.PLAIN, 64)
 val fontTitle2 = Font("Arial", Font.BOLD, 24)
+val fontTitleMini = Font("Arial", Font.PLAIN, 14)
 val fontButton = Font("Arial", Font.PLAIN, 18)
 val fontSubtitle = Font("Gill Sans MT Condensed", Font.PLAIN, 32)
 val fontTitleGame = Font("Imprint MT Shadow", Font.PLAIN, 72)
 val fontVersion = Font("Arial", Font.PLAIN, 14)
-val fontText = Font("Arial Narrow", Font.PLAIN, 18)
+val fontText = Font("Liberation Serif", Font.PLAIN, 18)
+val fontTextBold = Font("Liberation Serif", Font.BOLD, 18)
 val fontEcuation = Font("Arial Narrow", Font.ITALIC, 20)
 val fontTextMini = Font("Arial Narrow", Font.PLAIN, 14)
 

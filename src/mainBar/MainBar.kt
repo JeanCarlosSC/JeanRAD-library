@@ -1,9 +1,5 @@
-package services.graphicService.components.mainBar
 
-import services.graphicService.defaultCursor
-import services.graphicService.semiDarkGray3
-import services.graphicService.semiDarkGrayBlue
-import services.graphicService.setProperties
+import libraries.`JeanRAD-library`.*
 import java.awt.Image
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
@@ -11,15 +7,16 @@ import java.awt.event.MouseMotionListener
 import javax.swing.*
 import kotlin.system.exitProcess
 
-class MainBar(screenWidth: Int, jFrame: JFrame): JPanel(), MouseListener, MouseMotionListener {
+class MainBar(screenWidth: Int, jFrame: JFrame, move: Boolean = true): JPanel(), MouseListener, MouseMotionListener {
     private val mainPanel = JPanel()
 
     private var iLogo = ImageIcon()
-    private val iBtExitOn = ImageIcon("src/services/graphicService/components/mainBar/btExitOn.png")
-    private val iBtExitOff = ImageIcon("src/services/graphicService/components/mainBar/btExitOff.png")
-    private val jFrame: JFrame = jFrame
+    private val iBtExitOn = ImageIcon("src/libraries/JeanRAD-library/mainBar/resources/btExitOn.png")
+    private val iBtExitOff = ImageIcon("src/libraries/JeanRAD-library/mainBar/resources/btExitOff.png")
+    private val jFrame = jFrame
 
     private val lLogo = JLabel()
+    private val lTitle = JLabel()
 
     private val btExit = JButton()
 
@@ -27,8 +24,9 @@ class MainBar(screenWidth: Int, jFrame: JFrame): JPanel(), MouseListener, MouseM
     private var y0 = 0
 
     init {
-        mainPanel.setProperties(0, 0, screenWidth, 27, semiDarkGrayBlue, null)
-        mainPanel.addMouseMotionListener(this)
+        mainPanel.setProperties(0, 0, screenWidth, 27, darkGray, null)
+        if(move)
+            mainPanel.addMouseMotionListener(this)
         add(mainPanel)
 
         btExit.setProperties(screenWidth - 48, 0, iBtExitOff, defaultCursor)
@@ -36,6 +34,7 @@ class MainBar(screenWidth: Int, jFrame: JFrame): JPanel(), MouseListener, MouseM
         mainPanel.add(btExit)
 
         mainPanel.add(lLogo)
+        mainPanel.add(lTitle)
 
         setProperties(0, 0, screenWidth, 29, semiDarkGray3, null)
     }
@@ -79,5 +78,9 @@ class MainBar(screenWidth: Int, jFrame: JFrame): JPanel(), MouseListener, MouseM
             x0 = e.x
             y0 = e.y
         }
+    }
+
+    fun setTitle(str: String) {
+        lTitle.setProperties(600, 0, 570, 28, str, gray, fontTitleMini)
     }
 }

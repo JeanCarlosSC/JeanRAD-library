@@ -1,25 +1,12 @@
-package services.graphicService
+package libraries.`JeanRAD-library`
 
 import java.awt.*
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
 import javax.swing.*
 import javax.swing.border.Border
-import javax.xml.stream.Location
 
-fun JFrame.setProperties(width: Int = 1280, height: Int = 720, background: Color? = semiDarkGrayBlue, undecorated: Boolean = true,
-                         border: Border? = blackBorderTransparent, relativeLocation: Component? = null, visible: Boolean = true,
-                         layoutManager: LayoutManager? = null) {
-    this.setSize(width, height)
-    this.setLocationRelativeTo(relativeLocation)
-    this.contentPane.background = background
-    this.isUndecorated = undecorated
-    this.rootPane.border = border
-    this.layout = layoutManager
-    this.isVisible = visible
-}
-
-fun JPanel.setProperties(x: Int, y: Int, width: Int, height: Int, color: Color?, layoutManager: LayoutManager?, border: Border? = null) {
+fun JPanel.setProperties(x: Int, y: Int, width: Int, height: Int, color: Color?, border: Border? = null, layoutManager: LayoutManager? = null) {
     this.setBounds(x, y, width, height)
     this.background = color
     this.border = border
@@ -52,14 +39,17 @@ fun JLabel.setProperties(x: Int, y: Int, width: Int, height: Int, str: String?, 
     }
 }
 
-fun JFrame.setProperties(width: Int, height: Int, layoutManager: LayoutManager?, background: Color? = null, title: String? = null) {
+fun JFrame.setProperties(width: Int = 1280, height: Int = 720, background: Color? = semiDarkGrayBlue, undecorated: Boolean = true,
+         border: Border? = blackBorderTransparent, relativeLocation: Component? = null, visible: Boolean = true,
+         layoutManager: LayoutManager? = null) {
     this.setSize(width, height)
-    this.setLocationRelativeTo(null)
-    this.defaultCloseOperation = WindowConstants.EXIT_ON_CLOSE
-    this.title = title
-    this.layout = layout
+    this.setLocationRelativeTo(relativeLocation)
+    this.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     this.contentPane.background = background
-    this.isVisible = true
+    this.isUndecorated = undecorated
+    this.rootPane.border = border
+    this.layout = layoutManager
+    this.isVisible = visible
 }
 
 /**
@@ -125,16 +115,16 @@ fun JButton.setProperties( x: Int,y: Int, width: Int, height: Int, cursor: Curso
     this.isContentAreaFilled = isSolid
 }
 
-fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, text: String? = "", foreground: Color? = black, font: Font?,
-                             editable: Boolean, border: Border? = null) {
+fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, editable: Boolean = true, lineWrap: Boolean = true, text: String? = "", foreground: Color? = darkWhite,
+                            background: Color? = darkGray, font: Font? = fontText, border: Border? = semiDarkGray2Border) {
     this.setBounds(x, y, width, height)
     this.text = text
     this.isEditable = editable
     this.foreground = foreground
     this.font = font
-    this.background = transparent
+    this.background = background
     this.caretColor = foreground
     this.border = border
-    this.wrapStyleWord = true
-    this.lineWrap = true
+    this.wrapStyleWord = lineWrap
+    this.lineWrap = lineWrap
 }
