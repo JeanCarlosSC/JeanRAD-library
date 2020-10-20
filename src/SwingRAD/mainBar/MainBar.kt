@@ -12,7 +12,8 @@ import kotlin.system.exitProcess
 
 class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true, backgroundColor: Color = darkGray,
               private val fontColor: Color = gray, borderColor: Color = semiDarkGray3
-): JPanel(), MouseListener, MouseMotionListener {
+): JPanel(){
+
     private val mainPanel = JPanel()
 
     private var iLogo = ImageIcon()
@@ -31,12 +32,7 @@ class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true
         mainPanel.setProperties(0, 0, screenWidth, 27, backgroundColor, null)
 
         if(move)
-            mainPanel.addMouseMotionListener {
-                override fun mouseExited(e: MouseEvent?) {
-                    if(e?.source == btExit)
-                        btExit.icon = iBtExitOff
-                }
-
+            mainPanel.addMouseMotionListener(object: MouseMotionListener {
                 override fun mouseDragged(e: MouseEvent) {
                     if(e.source == mainPanel) {
                         jFrame.setLocation(e.xOnScreen - x0, e.yOnScreen - y0)
@@ -49,11 +45,16 @@ class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true
                         y0 = e.y
                     }
                 }
-            }
+            })
         add(mainPanel)
 
         btExit.setProperties(screenWidth - 48, 0, iBtExitOff, defaultCursor)
-        btExit.addMouseListener {
+        btExit.addMouseListener (object: MouseListener{
+            override fun mouseExited(e: MouseEvent?) {
+                if(e?.source == btExit)
+                    btExit.icon = iBtExitOff
+            }
+
             override fun mouseClicked(e: MouseEvent?) {
                 if(e?.source == btExit) {
                     if(JOptionPane.showConfirmDialog(null, "Desea salir?") == 0)
@@ -69,7 +70,7 @@ class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true
                 if(e?.source == btExit)
                     btExit.icon = iBtExitOn
             }
-        }
+        })
         mainPanel.add(btExit)
 
         mainPanel.add(lLogo)
@@ -86,4 +87,5 @@ class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true
     fun setTitle(str: String) {
         lTitle.setProperties(400, 0, 570, 28, str, fontTitleMini, fontColor, "CENTER")
     }
+
 }
