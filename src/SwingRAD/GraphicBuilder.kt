@@ -6,12 +6,12 @@ import java.awt.event.MouseListener
 import javax.swing.*
 import javax.swing.border.Border
 
-fun JPanel.setProperties(x: Int, y: Int, width: Int, height: Int, backgroundColor: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border,
-                         layoutManager: LayoutManager? = null) {
+fun JPanel.setProperties(x: Int, y: Int, width: Int, height: Int, background: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border,
+                         layout: LayoutManager? = null) {
     this.setBounds(x, y, width, height)
-    this.background = backgroundColor
+    this.background = background
     this.border = border
-    this.layout = layoutManager
+    this.layout = layout
 }
 
 /**
@@ -43,14 +43,14 @@ fun JLabel.setProperties(x: Int, y: Int, width: Int, height: Int, str: String? =
 
 fun JFrame.setProperties(width: Int = 1280, height: Int = 720, background: Color? = megaDarkGray, undecorated: Boolean = true,
          border: Border? = blackBorderTransparent, relativeLocation: Component? = null, visible: Boolean = true,
-         layoutManager: LayoutManager? = null) {
+         layout: LayoutManager? = null) {
     this.setSize(width, height)
     this.setLocationRelativeTo(relativeLocation)
     this.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     this.contentPane.background = background
     this.isUndecorated = undecorated
     this.rootPane.border = border
-    this.layout = layoutManager
+    this.layout = layout
     this.isVisible = visible
 }
 
@@ -73,15 +73,15 @@ fun JButton.setProperties(x: Int, y: Int, icon: Icon?, cursor: Cursor? = handCur
 /**
  * text button
  */
-fun JButton.setProperties(x: Int, y: Int, width: Int, height: Int, text: String?, cursor: Cursor? = handCursor, font: Font? = fontTitleMini,
+fun JButton.setProperties(x: Int, y: Int, width: Int, height: Int, text: String? = "", cursor: Cursor? = handCursor, font: Font? = fontTitleMini,
                           background: Color? = darkGray, foreground: Color? = darkWhite, border: Border? = semiDarkGray2Border,
-                          alignment: String? = "CENTER", isSolid: Boolean = true, backgroundEntered: Color = semiDarkGray) {
+                          hAlignment: String? = "CENTER", isSolid: Boolean = true, backgroundEntered: Color = semiDarkGray) {
     setProperties(x, y, width, height, cursor, background, isSolid)
     this.text = text
     this.font = font
     this.foreground = foreground
     this.border = border
-    this.horizontalAlignment = when (alignment) {
+    this.horizontalAlignment = when (hAlignment) {
         "LEFT" -> SwingConstants.LEFT
         "RIGHT" -> SwingConstants.RIGHT
         else -> SwingConstants.CENTER
@@ -132,13 +132,13 @@ fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, editable: B
 }
 
 fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, editable: Boolean = true, text: String? = "", foreground: Color? = darkWhite,
-                            backgroundColor: Color? = darkGray, font: Font? = fontText, border: Border? = semiDarkGray2Border) {
+                            background: Color? = darkGray, font: Font? = fontText, border: Border? = semiDarkGray2Border) {
     this.setBounds(x, y, width, height)
     this.text = text
     this.isEditable = editable
     this.foreground = foreground
     this.font = font
-    this.background = backgroundColor
+    this.background = background
     this.caretColor = foreground
     this.border = border
 }

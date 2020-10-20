@@ -31,11 +31,45 @@ class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true
         mainPanel.setProperties(0, 0, screenWidth, 27, backgroundColor, null)
 
         if(move)
-            mainPanel.addMouseMotionListener(this)
+            mainPanel.addMouseMotionListener {
+                override fun mouseExited(e: MouseEvent?) {
+                    if(e?.source == btExit)
+                        btExit.icon = iBtExitOff
+                }
+
+                override fun mouseDragged(e: MouseEvent) {
+                    if(e.source == mainPanel) {
+                        jFrame.setLocation(e.xOnScreen - x0, e.yOnScreen - y0)
+                    }
+                }
+
+                override fun mouseMoved(e: MouseEvent?) {
+                    if(e?.source == mainPanel) {
+                        x0 = e.x
+                        y0 = e.y
+                    }
+                }
+            }
         add(mainPanel)
 
         btExit.setProperties(screenWidth - 48, 0, iBtExitOff, defaultCursor)
-        btExit.addMouseListener(this)
+        btExit.addMouseListener {
+            override fun mouseClicked(e: MouseEvent?) {
+                if(e?.source == btExit) {
+                    if(JOptionPane.showConfirmDialog(null, "Desea salir?") == 0)
+                        exitProcess(0)
+                }
+            }
+
+            override fun mousePressed(e: MouseEvent?) {}
+
+            override fun mouseReleased(e: MouseEvent?) {}
+
+            override fun mouseEntered(e: MouseEvent?) {
+                if(e?.source == btExit)
+                    btExit.icon = iBtExitOn
+            }
+        }
         mainPanel.add(btExit)
 
         mainPanel.add(lLogo)
@@ -52,41 +86,4 @@ class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true
     fun setTitle(str: String) {
         lTitle.setProperties(400, 0, 570, 28, str, fontTitleMini, fontColor, "CENTER")
     }
-
-    override fun mouseClicked(e: MouseEvent?) {
-        if(e?.source == btExit) {
-            if(JOptionPane.showConfirmDialog(null, "Desea salir?") == 0)
-                exitProcess(0)
-        }
-    }
-
-    override fun mousePressed(e: MouseEvent?) {
-    }
-
-    override fun mouseReleased(e: MouseEvent?) {
-    }
-
-    override fun mouseEntered(e: MouseEvent?) {
-        if(e?.source == btExit)
-            btExit.icon = iBtExitOn
-    }
-
-    override fun mouseExited(e: MouseEvent?) {
-        if(e?.source == btExit)
-            btExit.icon = iBtExitOff
-    }
-
-    override fun mouseDragged(e: MouseEvent) {
-        if(e.source == mainPanel) {
-            jFrame.setLocation(e.xOnScreen - x0, e.yOnScreen - y0)
-        }
-    }
-
-    override fun mouseMoved(e: MouseEvent?) {
-        if(e?.source == mainPanel) {
-            x0 = e.x
-            y0 = e.y
-        }
-    }
-
 }

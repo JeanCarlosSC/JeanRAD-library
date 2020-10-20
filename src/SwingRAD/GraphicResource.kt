@@ -27,17 +27,28 @@ val orangeGray = Color(199,118,50) //reserve word font
 val lightBlueGray = Color(104,150,186) //numbers font
 val semiDarkGray3 = Color(81, 81, 81) //mainToolbar bottom border
 
-//light theme based on intellij idea
-
-
 //green complementary cake
-val lightGreen = Color(193, 255, 171)
-val green = Color(122, 179, 102)
-val greenCake = Color(212, 255, 196)
-val purple = Color(179, 84, 167)
-val lightPurple = Color(255, 171, 245)
+val gcc1 = Color(193, 255, 171)
+val gcc2 = Color(122, 179, 102)
+val gcc3 = Color(212, 255, 196)
+val gcc4 = Color(179, 84, 167)
+val gcc5 = Color(255, 171, 245)
 
-//special palette
+//monochrome dark blue
+val mdb1 = Color(46, 49, 107)
+val mdb2 = Color(174, 177, 238)
+val mdb3 = Color(101, 107, 235)
+val mdb4 = Color(78, 80, 107)
+val mdb5 = Color(79, 84, 184)
+
+//warning pallette
+val wp1 = Color(72, 140, 3)
+val wp2 = Color(132, 217, 4)
+val wp3 = Color(242, 203, 5)
+val wp4 = Color(242, 159, 5)
+val wp5 = Color(242, 68, 5)
+
+//special palette 1
 val cyan = Color(72, 206, 247)
 val darkCyan = Color(70, 147, 171)
 val darkOcher = Color(169, 105, 0)
@@ -87,5 +98,7 @@ val blackBorder: Border = BorderFactory.createLineBorder(black, 2, false)
 val blackBorderTransparent: Border = BorderFactory.createLineBorder(blackTransparent, 2, false)
 val grayBorder: Border = BorderFactory.createLineBorder(gray, 2, false)
 val semiDarkGray2Border: Border = BorderFactory.createLineBorder(semiDarkGray2, 2, false)
-val darkOcherBorder: Border = BorderFactory.createLineBorder(darkOcher, 2, false)
 val darkGrayBorder: Border = BorderFactory.createLineBorder(darkGray, 2, false)
+
+//special palette 1
+val darkOcherBorder: Border = BorderFactory.createLineBorder(darkOcher, 2, false)
