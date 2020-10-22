@@ -6,7 +6,7 @@ import java.awt.event.MouseListener
 import javax.swing.*
 import javax.swing.border.Border
 
-fun JPanel.setProperties(x: Int, y: Int, width: Int, height: Int, background: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border,
+fun JPanel.setProperties(x: Int=0, y: Int=0, width: Int=0, height: Int=0, background: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border,
                          layout: LayoutManager? = null) {
     this.setBounds(x, y, width, height)
     this.background = background
@@ -29,9 +29,10 @@ fun JLabel.setProperties(x: Int, y: Int, icon: Icon, cursor: Cursor? = null) {
  * text label
  */
 fun JLabel.setProperties(x: Int, y: Int, width: Int, height: Int, str: String? = "", font: Font? = fontText, fontColor: Color? = darkWhite,
-                         hAlignment: String? = "LEFT") {
+                         hAlignment: String? = "LEFT", background: Color? = null) {
     this.setBounds(x, y, width, height)
     this.foreground = fontColor
+    this.background = background
     this.font = font
     this.text = str
     this.horizontalAlignment = when(hAlignment) {
