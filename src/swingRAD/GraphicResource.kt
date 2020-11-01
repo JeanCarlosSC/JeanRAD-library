@@ -66,15 +66,16 @@ val semiDarkWhite = Color(210, 210, 210)
 
 //-----------------------------------------FONTS------------------------------------------------------------------------
 //Windows standard
-val fontTitle = Font("Gill Sans MT Condensed", Font.PLAIN, 64)
-val fontTitle2 = Font("Arial", Font.BOLD, 24)
+val fontTitle = Font("Arial", Font.BOLD, 28)
+val fontTitle1 = Font("Gill Sans MT Condensed", Font.PLAIN, 64)
 val fontTitleMini = Font("Arial", Font.PLAIN, 14) //used in title of mainBar, buttons
 val fontSubtitle = Font("Gill Sans MT Condensed", Font.PLAIN, 32)
 val fontVersion = Font("Arial", Font.PLAIN, 14)
+
+val fontText = Font("Arial", Font.PLAIN, 17)
 val fontEcuation = Font("Arial Narrow", Font.ITALIC, 20)
 val fontTextMini = Font("Arial Narrow", Font.PLAIN, 14)
 val fontTextBig = Font("Arial", Font.PLAIN, 18)
-val fontText = Font("Arial Narrow", Font.PLAIN, 18)
 val fontTextBold = Font("Calibri", Font.BOLD, 18)
 
 //Linux standard

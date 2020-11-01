@@ -143,3 +143,12 @@ fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, editable: 
     this.caretColor = foreground
     this.border = border
 }
+
+fun JTable.getPanelBar(x: Int, y: Int, width: Int, height: Int, background: Color = semiDarkGrayBlue, border: Border? = null): JScrollPane {
+    val panelScroll = JScrollPane(this)
+    panelScroll.setLocation(x, y)
+    panelScroll.setSize(width, height)
+    panelScroll.viewport.background = background
+    panelScroll.border = border
+    return panelScroll
+}

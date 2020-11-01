@@ -10,7 +10,7 @@ import java.awt.event.MouseMotionListener
 import javax.swing.*
 import kotlin.system.exitProcess
 
-class MainBar(screenWidth: Int, private val jFrame: JFrame, move: Boolean = true, backgroundColor: Color = darkGray,
+class MainBar(private val jFrame: JFrame, screenWidth: Int = 1280, move: Boolean = true, backgroundColor: Color = darkGray,
               private val fontColor: Color = gray, borderColor: Color = semiDarkGray3
 ): JPanel(){
 
