@@ -7,7 +7,6 @@ import java.awt.Cursor
 import java.awt.Font
 import javax.swing.ImageIcon
 import javax.swing.JLabel
-import javax.swing.SwingConstants
 
 class SLabel: JLabel {
 
@@ -16,7 +15,7 @@ class SLabel: JLabel {
     }
 
     constructor (x: Int, y: Int, width: Int, height: Int, str: String? = "", font: Font? = fontText, fontColor: Color? = darkWhite,
-                 hAlignment: String? = "LEFT", background: Color? = null) {
+                 hAlignment: Int = LEFT, background: Color? = null) {
         setProperties(x , y, width, height, str, font, fontColor, hAlignment, background)
     }
 
@@ -37,16 +36,12 @@ class SLabel: JLabel {
      * text label
      */
     fun setProperties(x: Int, y: Int, width: Int, height: Int, str: String? = "", font: Font? = fontText, fontColor: Color? = darkWhite,
-                             hAlignment: String? = "LEFT", background: Color? = null) {
+                             hAlignment: Int = LEFT, background: Color? = null) {
         this.setBounds(x, y, width, height)
         this.foreground = fontColor
         this.background = background
         this.font = font
         this.text = str
-        this.horizontalAlignment = when(hAlignment) {
-            "CENTER" -> SwingConstants.CENTER
-            "RIGHT" -> SwingConstants.RIGHT
-            else -> SwingConstants.LEFT
-        }
+        this.horizontalAlignment = hAlignment
     }
 }
