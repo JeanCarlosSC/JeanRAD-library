@@ -44,4 +44,5 @@ class SLabel: JLabel {
         this.text = str
         this.horizontalAlignment = hAlignment
     }
+
 }

@@ -9,15 +9,6 @@ import javax.swing.*
 import javax.swing.border.Border
 import javax.swing.table.DefaultTableModel
 
-//JPanel-----------------------------------------------------------------------------------------
-fun JPanel.setProperties(x: Int=0, y: Int=0, width: Int=0, height: Int=0, background: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border,
-                         layout: LayoutManager? = null) {
-    this.setBounds(x, y, width, height)
-    this.background = background
-    this.border = border
-    this.layout = layout
-}
-
 //JFrame-----------------------------------------------------------------------------------------
 fun JFrame.setProperties(width: Int = 1280, height: Int = 720, background: Color? = megaDarkGray, undecorated: Boolean = true,
          border: Border? = blackBorderTransparent, relativeLocation: Component? = null, visible: Boolean = true,

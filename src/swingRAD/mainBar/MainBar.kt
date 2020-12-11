@@ -3,6 +3,7 @@ package swingRAD.mainBar
 import swingRAD.setProperties
 import swingRAD.*
 import swingRAD.sComponents.SLabel
+import swingRAD.sComponents.SPanel
 import java.awt.Color
 import java.awt.Image
 import java.awt.event.MouseEvent
@@ -13,9 +14,9 @@ import kotlin.system.exitProcess
 
 class MainBar(private val jFrame: JFrame, screenWidth: Int = 1280, move: Boolean = true, backgroundColor: Color = darkGray,
               private val fontColor: Color = gray, borderColor: Color = semiDarkGray3
-): JPanel(){
+): SPanel () {
 
-    private val mainPanel = JPanel()
+    private val mainPanel = SPanel(0, 0, screenWidth, 27, backgroundColor, null)
 
     private var iLogo = ImageIcon()
     private val iBtExitOn = ImageIcon("resources/mainBar/btExitOn.png")
@@ -30,8 +31,6 @@ class MainBar(private val jFrame: JFrame, screenWidth: Int = 1280, move: Boolean
     private var y0 = 0
 
     init {
-        mainPanel.setProperties(0, 0, screenWidth, 27, backgroundColor, null)
-
         if(move)
             mainPanel.addMouseMotionListener(object: MouseMotionListener {
                 override fun mouseDragged(e: MouseEvent) {
