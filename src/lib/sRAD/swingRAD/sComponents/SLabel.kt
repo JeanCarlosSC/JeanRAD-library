@@ -1,7 +1,7 @@
-package swingRAD.sComponents
+package lib.sRAD.swingRAD.sComponents
 
-import swingRAD.darkWhite
-import swingRAD.fontText
+import lib.sRAD.swingRAD.darkWhite
+import lib.sRAD.swingRAD.fontText
 import java.awt.Color
 import java.awt.Cursor
 import java.awt.Font
@@ -14,7 +14,7 @@ class SLabel: JLabel {
         setProperties(x, y, icon, cursor)
     }
 
-    constructor (x: Int, y: Int, width: Int, height: Int, str: String? = "", font: Font? = fontText, fontColor: Color? = darkWhite,
+    constructor (x: Int, y: Int, width: Int, height: Int = 18, str: String? = "", font: Font? = fontText, fontColor: Color? = darkWhite,
                  hAlignment: Int = LEFT, background: Color? = null) {
         setProperties(x , y, width, height, str, font, fontColor, hAlignment, background)
     }

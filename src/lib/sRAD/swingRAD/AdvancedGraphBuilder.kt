@@ -1,4 +1,4 @@
-package swingRAD
+package lib.sRAD.swingRAD
 
 import java.awt.*
 import java.awt.geom.Area

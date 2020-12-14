@@ -1,8 +1,8 @@
-package swingRAD.sComponents
+package lib.sRAD.swingRAD.sComponents
 
-import swingRAD.darkWhite
-import swingRAD.semiDarkGrayBlue
-import swingRAD.semiDarkGrayBlueBorder
+import lib.sRAD.swingRAD.darkWhite
+import lib.sRAD.swingRAD.semiDarkGrayBlue
+import lib.sRAD.swingRAD.semiDarkGrayBlueBorder
 import javax.swing.JMenuBar
 import java.awt.Graphics
 import javax.swing.JMenu

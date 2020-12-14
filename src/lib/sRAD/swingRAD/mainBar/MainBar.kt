@@ -1,9 +1,9 @@
-package swingRAD.mainBar
+package lib.sRAD.swingRAD.mainBar
 
-import swingRAD.setProperties
-import swingRAD.*
-import swingRAD.sComponents.SLabel
-import swingRAD.sComponents.SPanel
+import lib.sRAD.swingRAD.setProperties
+import lib.sRAD.swingRAD.*
+import lib.sRAD.swingRAD.sComponents.SLabel
+import lib.sRAD.swingRAD.sComponents.SPanel
 import java.awt.Color
 import java.awt.Image
 import java.awt.event.MouseEvent

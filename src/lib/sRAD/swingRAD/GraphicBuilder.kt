@@ -1,7 +1,7 @@
-package swingRAD
+package lib.sRAD.swingRAD
 
-import swingRAD.mainBar.MainBar
-import swingRAD.sComponents.SLabel
+import lib.sRAD.swingRAD.mainBar.MainBar
+import lib.sRAD.swingRAD.sComponents.SLabel
 import java.awt.*
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
@@ -115,7 +115,7 @@ fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, editable: B
 }
 
 //JTextField-----------------------------------------------------------------------------------------
-fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, editable: Boolean = true, text: String? = "", foreground: Color? = darkWhite,
+fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int = 28, editable: Boolean = true, text: String? = "", foreground: Color? = darkWhite,
                              background: Color? = darkGray, font: Font? = fontText, border: Border? = semiDarkGray2Border,
                              hAlignment: Int = JTextField.LEFT) {
     this.setBounds(x, y, width, height)
@@ -127,23 +127,6 @@ fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, editable: 
     this.caretColor = foreground
     this.border = border
     this.horizontalAlignment = hAlignment
-}
-
-//JTable--------------------------------------------------------------------------------------------
-fun JTable.getPanelBar(x: Int, y: Int, width: Int, height: Int, background: Color = semiDarkGrayBlue, border: Border? = null): JScrollPane {
-    val panelScroll = JScrollPane(this)
-    panelScroll.setLocation(x, y)
-    panelScroll.setSize(width, height)
-    panelScroll.viewport.background = background
-    panelScroll.border = border
-    return panelScroll
-}
-
-fun JTable.setProperties(modelo: DefaultTableModel) {
-    this.model = modelo
-    this.rowHeight = 40
-    this.setDefaultRenderer(Any::class.java, getCustomTable())
-    this.gridColor = black
 }
 
 //JScrollPane----------------------------------------------------------------------------------------

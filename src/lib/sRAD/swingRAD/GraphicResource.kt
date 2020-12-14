@@ -1,4 +1,4 @@
-package swingRAD
+package lib.sRAD.swingRAD
 
 import java.awt.Color
 import java.awt.Cursor
@@ -52,7 +52,7 @@ val semiDarkWhite = Color(210, 210, 210)
 //--------------------------------------COLOR THEMES--------------------------------------------------------------------
 
 //dark theme based on intellij idea
-val semiDarkGrayBlue = Color(60, 63, 65) //main background
+val semiDarkGrayBlue = Color(50, 53, 55) //main background
 val darkGray = Color(49, 51, 53) //second background
 val megaDarkGray = Color(43, 43, 43) //console background
 val semiDarkGray2 = Color(85, 85, 85)//console border
