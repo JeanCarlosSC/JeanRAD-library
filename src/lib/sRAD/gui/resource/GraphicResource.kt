@@ -1,4 +1,4 @@
-package lib.sRAD.swingRAD
+package lib.sRAD.gui.resource
 
 import java.awt.Color
 import java.awt.Cursor
@@ -50,6 +50,15 @@ val megaDarkWhite = Color(180, 180, 180)
 val semiDarkWhite = Color(210, 210, 210)
 
 //--------------------------------------COLOR THEMES--------------------------------------------------------------------
+
+//tema amigable
+val ta1 = Color(255, 242, 204)
+val ta2 = Color(214, 182, 86)
+val ta3 = Color(248, 206, 204)
+val ta4 = Color(184, 84, 80)
+val ta5 = Color(218, 232, 252)
+val ta6 = Color(108, 142, 191)
+val ta7 = Color(255, 89, 89)
 
 //dark theme based on intellij idea
 val semiDarkGrayBlue = Color(50, 53, 55) //main background
@@ -104,6 +113,11 @@ val semiDarkGrayBlueBorder: Border = BorderFactory.createLineBorder(semiDarkGray
 val grayBorder: Border = BorderFactory.createLineBorder(gray, 2, false)
 val semiDarkGray2Border: Border = BorderFactory.createLineBorder(semiDarkGray2, 2, false)
 val darkGrayBorder: Border = BorderFactory.createLineBorder(darkGray, 2, false)
+
+//tema amigable
+val ta2Border: Border = BorderFactory.createLineBorder(ta2, 2, false)
+val ta4Border: Border = BorderFactory.createLineBorder(ta4, 2, false)
+val ta6Border: Border = BorderFactory.createLineBorder(ta6, 2, false)
 
 //special palette 1
 val darkOcherBorder: Border = BorderFactory.createLineBorder(darkOcher, 2, false)

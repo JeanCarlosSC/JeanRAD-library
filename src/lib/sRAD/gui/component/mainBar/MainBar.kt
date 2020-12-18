@@ -1,9 +1,9 @@
-package lib.sRAD.swingRAD.mainBar
+package lib.sRAD.gui.component.mainBar
 
-import lib.sRAD.swingRAD.setProperties
-import lib.sRAD.swingRAD.*
-import lib.sRAD.swingRAD.sComponents.SLabel
-import lib.sRAD.swingRAD.sComponents.SPanel
+import lib.sRAD.gui.resource.*
+import lib.sRAD.gui.sComponent.SButton
+import lib.sRAD.gui.sComponent.SLabel
+import lib.sRAD.gui.sComponent.SPanel
 import java.awt.Color
 import java.awt.Image
 import java.awt.event.MouseEvent
@@ -25,7 +25,7 @@ class MainBar(private val jFrame: JFrame, screenWidth: Int = 1280, move: Boolean
     private val lLogo = SLabel()
     private val lTitle = SLabel()
 
-    private val btExit = JButton()
+    private val btExit = SButton()
 
     private var x0 = 0
     private var y0 = 0
