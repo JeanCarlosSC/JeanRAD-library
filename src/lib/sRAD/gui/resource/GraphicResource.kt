@@ -44,6 +44,7 @@ val blueGray = Color(82, 125, 181)
 
 //others and specials
 val blackTransparent = Color(0F, 0F, 0F, 0.8F)
+val transparentMustard = Color(1F, 1F, 0F, 0.5F)
 val transparent = Color(0F, 0F, 0F, 0F)
 val superLightGray = Color(120, 120, 120)
 val megaDarkWhite = Color(180, 180, 180)
@@ -79,6 +80,7 @@ val semiDarkGray3 = Color(81, 81, 81) //mainToolbar bottom border
 //Windows standard
 val fontTitle = Font("Arial", Font.BOLD, 28)
 val fontTitle1 = Font("Gill Sans MT Condensed", Font.PLAIN, 64)
+val fontTitle2 = Font("Arial", Font.BOLD, 18)
 val fontTitleMini = Font("Arial", Font.PLAIN, 14) //used in title of mainBar, buttons
 val fontSubtitle = Font("Gill Sans MT Condensed", Font.PLAIN, 32)
 val fontVersion = Font("Arial", Font.PLAIN, 14)
