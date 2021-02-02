@@ -1,6 +1,6 @@
 package lib.sRAD.gui.tool
 
-import lib.sRAD.gui.resource.*
+import lib.sRAD.gui.component.Resource.*
 import java.awt.*
 import java.awt.geom.Area
 import java.awt.geom.Ellipse2D
@@ -15,7 +15,11 @@ import javax.swing.table.DefaultTableCellRenderer
 /** @author Cristian Felipe Patiño Cáceres
  * @contributor Jean Carlos Santoya Cabrera */
 
-fun getCustomTable(colorPrincipal: Color? = semiDarkGrayBlue, colorSecundario: Color? = semiDarkGrayBlue, colorSeleccion: Color? = mdb1,
+fun getCustomTable(): DefaultTableCellRenderer {
+    return getCustomTable(DTII1)
+}
+
+fun getCustomTable(colorPrincipal: Color? = DTII1, colorSecundario: Color? = DTII1, colorSeleccion: Color? = mdb1,
                    colorFuente: Color? = darkWhite, fuente: Font? = fontText
 ): DefaultTableCellRenderer {
     return object : DefaultTableCellRenderer() {
@@ -38,7 +42,11 @@ fun getCustomTable(colorPrincipal: Color? = semiDarkGrayBlue, colorSecundario: C
     }
 }
 
-fun getCustomScroll(grosor: Int = 7, radio: Int = 10, colorFondo: Color? = semiDarkGrayBlue, colorBarraNormal: Color? = gray,
+fun getCustomScroll(): BasicScrollBarUI{
+    return getCustomScroll(7, 10, DTII1, gray, darkBlueGray)
+}
+
+fun getCustomScroll(grosor: Int = 7, radio: Int = 10, colorFondo: Color? = DTII1, colorBarraNormal: Color? = gray,
                     colorBarraArrastrada: Color? = darkBlueGray
 ): BasicScrollBarUI {
     return object : BasicScrollBarUI() {
