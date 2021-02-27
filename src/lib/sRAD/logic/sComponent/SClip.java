@@ -9,7 +9,6 @@ public class SClip {
     private Clip audioClip;
     private AudioInputStream audioStream;
     private Boolean stop = false;
-    private Thread thread1, thread2;
 
     //clip method
     public SClip(String path) {
@@ -34,9 +33,10 @@ public class SClip {
         catch (LineUnavailableException | IOException e) {
             e.printStackTrace();
         }
+    }
 
-        //initialize threads
-        thread1 = new Thread( () -> {
+    public void play() {
+        new Thread( () -> {
             stop = false;
             audioClip.setFramePosition(0);
             audioClip.start();
@@ -45,8 +45,11 @@ public class SClip {
                     audioClip.stop();
                 }
             }
-        }){};
-        thread2 = new Thread( () -> {
+        }){}.start();
+    }
+
+    public void loop() {
+        new Thread( () -> {
             stop = false;
             audioClip.setFramePosition(0);
             audioClip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -55,15 +58,7 @@ public class SClip {
                     audioClip.stop();
                 }
             }
-        }){};
-    }
-
-    public void play() {
-        thread1.start();
-    }
-
-    public void loop() {
-        thread2.start();
+        }){}.start();
     }
 
     public void stop() {
