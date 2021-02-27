@@ -8,7 +8,6 @@ public class SClip {
 
     private Clip audioClip;
     private AudioInputStream audioStream;
-    private Boolean stop = false;
 
     //clip method
     public SClip(String path) {
@@ -37,32 +36,20 @@ public class SClip {
 
     public void play() {
         new Thread( () -> {
-            stop = false;
             audioClip.setFramePosition(0);
             audioClip.start();
-            while(audioClip.isActive()) {
-                if(stop) {
-                    audioClip.stop();
-                }
-            }
         }){}.start();
     }
 
     public void loop() {
         new Thread( () -> {
-            stop = false;
             audioClip.setFramePosition(0);
             audioClip.loop(Clip.LOOP_CONTINUOUSLY);
-            while(audioClip.isActive()) {
-                if(stop) {
-                    audioClip.stop();
-                }
-            }
         }){}.start();
     }
 
     public void stop() {
-        stop = true;
+        audioClip.stop();
     }
 
 }
