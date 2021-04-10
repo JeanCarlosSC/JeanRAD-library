@@ -5,23 +5,26 @@ import java.awt.*;
 
 import static lib.sRAD.gui.component.Resource.*;
 
-
+/**
+ * bg = background
+ */
 public class Theme {
     //general
-    public static Color bg2 = DTII1; //background 2
-    public static Color bg3 = DTII2; //background 3
+    public static Color bg2 = DTII1;
+    //frame
+    public static Color fBg = DTII2;
     //button
-    public static Color btBg = DTII5; //background
+    public static Color btBg = DTII5;
     //ventana emergente
-    public static Color veBg = DTII4; //background
+    public static Color veBg = DTII4;
     //panel
-    public static Color pBg = DTII3; //background
+    public static Color pBg = DTII3;
     public static Border pB = DTII4Border; //border
     //font
     public static Color fFg = DTII14; //foreground text
     //main bar
     public static Color mbFg = DTII7; //foreground
     //tabbed pane
-    public static Color tpBg = WP4; // background
+    public static Color tpBg = WP4;
     public static Color tpFg = BLACK; // foreground
 }

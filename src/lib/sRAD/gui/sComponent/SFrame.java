@@ -23,12 +23,6 @@ public class SFrame extends JFrame {
         setProperties(type);
     }
 
-    public void setProperties(int type) {
-        if(type == ESTANDAR) {
-            setProperties();
-        }
-    }
-
     /**
      * Constructor de javax.swing.JFrame
      */
@@ -36,12 +30,30 @@ public class SFrame extends JFrame {
         super();
     }
 
+    /**
+     * Create a new decorated frame
+     * @param width width of frame
+     * @param height height of frame
+     */
+    public SFrame(int width, int height) {
+        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null, true);
+    }
+
+    public void setProperties(int type) {
+        if(type == ESTANDAR) {
+            setProperties();
+        }
+    }
+
+    /**
+     * Default properties of frame
+     */
     public void setProperties() {
-        setProperties(1280, 720, Theme.bg3, true, blackBorderTransparent, null, true);
+        setProperties(1280, 720, Theme.fBg, true, blackBorderTransparent, null, true);
     }
 
     public void setProperties(int width, int height) {
-        setProperties(width, height, Theme.bg3, true, blackBorderTransparent, null);
+        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null);
     }
 
     public void setProperties(int width, int height, Color background) {
