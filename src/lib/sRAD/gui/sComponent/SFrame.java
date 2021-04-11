@@ -2,7 +2,6 @@ package lib.sRAD.gui.sComponent;
 
 import lib.sRAD.gui.component.MainBar;
 import lib.sRAD.gui.component.Theme;
-import lib.sRAD.gui.component.VentanaEmergente;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -12,19 +11,8 @@ import static lib.sRAD.gui.component.Resource.blackBorderTransparent;
 
 public class SFrame extends JFrame {
 
-    //ajustes pre-establecidos
-    public static final int ESTANDAR = 1; //configuración que uso en mis proyectos
-
     /**
-     * Constructor especializado
-     * @param type
-     */
-    public SFrame(int type) {
-        setProperties(type);
-    }
-
-    /**
-     * Constructor de javax.swing.JFrame
+     * javax.swing.JFrame constructor
      */
     public SFrame() {
         super();
@@ -36,43 +24,48 @@ public class SFrame extends JFrame {
      * @param height height of frame
      */
     public SFrame(int width, int height) {
-        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null, true);
-    }
-
-    public void setProperties(int type) {
-        if(type == ESTANDAR) {
-            setProperties();
-        }
+        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
     }
 
     /**
      * Default properties of frame
      */
     public void setProperties() {
-        setProperties(1280, 720, Theme.fBg, true, blackBorderTransparent, null, true);
+        setProperties(1280, 720, Theme.fBg, true, blackBorderTransparent, null, true, EXIT_ON_CLOSE, null);
     }
 
-    public void setProperties(int width, int height) {
-        setProperties(width, height, Theme.fBg, true, blackBorderTransparent, null);
-    }
-
+    /**
+     * Change properties of frame in one line
+     * @param width frame width
+     * @param height frame height
+     * @param background frame background color
+     */
     public void setProperties(int width, int height, Color background) {
-        setProperties(width, height, background, true, blackBorderTransparent, null);
-    }
-
-    public void setProperties(int width, int height, Color background, Boolean undecorated, Border border, Component relativeLocation) {
         setSize(width, height);
         getContentPane().setBackground(background);
+    }
+
+    /**
+     * Change properties of frame in one line
+     * @param width width of frame
+     * @param height height of frame
+     * @param background background color of frame
+     * @param undecorated undecorated property of frame
+     * @param border border of frame
+     * @param relativeLocation relative location of frame
+     */
+    public void setProperties(int width, int height, Color background, Boolean undecorated, Border border, Component relativeLocation) {
+        setProperties(width, height, background);
         setUndecorated(undecorated);
         rootPane.setBorder(border);
         setLocationRelativeTo(relativeLocation);
-        setLayout(null);
     }
 
     public void setProperties(int width, int height, Color background, Boolean undecorated, Border border, Component relativeLocation,
-                              Boolean visible) {
+                              Boolean visible, int defaultCloseOperation, LayoutManager layout) {
         setProperties(width, height, background, undecorated, border, relativeLocation);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(defaultCloseOperation);
+        setLayout(layout);
         setVisible(visible);
     }
 
