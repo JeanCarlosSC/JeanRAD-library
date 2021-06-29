@@ -19,7 +19,7 @@ public class SFrame extends JFrame {
     }
 
     /**
-     * Create a new decorated frame
+     * Crea un frame decorado con las dimensiones dadas
      * @param width width of frame
      * @param height height of frame
      */

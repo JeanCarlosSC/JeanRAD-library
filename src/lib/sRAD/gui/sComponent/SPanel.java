@@ -21,6 +21,13 @@ public class SPanel extends JPanel {
     }
 
     /**
+     * Crea un panel decorado con las dimensiones y posición dada.
+     */
+    public SPanel(int x, int y, int width, int height) {
+        setProperties(x, y, width, height, pBg, null);
+    }
+
+    /**
      * Constructor especializado
      * @param type Integer que recibe la forma pre-establecida en la que se configura el panel.
      * @param x Posición x del panel.
