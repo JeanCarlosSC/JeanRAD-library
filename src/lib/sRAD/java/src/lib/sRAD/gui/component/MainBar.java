@@ -34,6 +34,10 @@ public class MainBar extends SPanel {
         this(frame, 1280, true, Theme.bg2, DTII5);
     }
 
+    public MainBar(SFrame frame, int screenWidth) {
+        this(frame, screenWidth, true, Theme.bg2, DTII5);
+    }
+
     /**
      * Constructor personalizado
      * @param frame frame donde se insertará el main bar
@@ -165,7 +169,7 @@ public class MainBar extends SPanel {
      * @param title título
      */
     public void setTitle(String title) {
-        lTitle.setProperties(370, 0, 570, 28, title, fontTitleMini, Theme.mbFg, SwingConstants.CENTER);
+        lTitle.setProperties(26, 0, frameWidth-106, 28, title, fontTitleMini, Theme.mbFg, SwingConstants.CENTER);
     }
 
 }
