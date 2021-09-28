@@ -1,6 +1,6 @@
-package lib.sRAD.kotlin.gui.component
+package lib.sRAD.gui.component
 
-import lib.sRAD.kotlin.gui.sComponent.SFrame
+import lib.sRAD.gui.sComponent.SFrame
 
 open class VentanaEmergente(frame: SFrame, width: Int, height: Int): SFrame() {
     private val frame: SFrame

@@ -1,9 +1,9 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.DTII3
-import lib.sRAD.kotlin.gui.component.DTII4Border
-import lib.sRAD.kotlin.gui.component.DTII7
-import lib.sRAD.kotlin.gui.component.SP4
+import lib.sRAD.gui.component.DTII3
+import lib.sRAD.gui.component.DTII4Border
+import lib.sRAD.gui.component.DTII7
+import lib.sRAD.gui.component.SP4
 import java.awt.*
 import javax.swing.JButton
 import javax.swing.JComponent

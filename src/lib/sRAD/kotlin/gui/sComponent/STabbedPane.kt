@@ -1,7 +1,7 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.Theme.tpBg
-import lib.sRAD.kotlin.gui.component.Theme.tpFg
+import lib.sRAD.gui.component.Theme.tpBg
+import lib.sRAD.gui.component.Theme.tpFg
 import java.awt.Color
 import javax.swing.JTabbedPane
 

@@ -1,7 +1,7 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.*
-import lib.sRAD.kotlin.gui.sComponent.SScrollPane.Companion.customScroll
+import lib.sRAD.gui.component.*
+import lib.sRAD.gui.sComponent.SScrollPane.Companion.customScroll
 import java.awt.Color
 import java.awt.Component
 import java.awt.Dimension

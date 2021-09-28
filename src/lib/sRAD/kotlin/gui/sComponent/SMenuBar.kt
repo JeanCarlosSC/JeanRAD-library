@@ -1,8 +1,8 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.DTII14
-import lib.sRAD.kotlin.gui.component.DTII1Border
-import lib.sRAD.kotlin.gui.component.DTII3
+import lib.sRAD.gui.component.DTII14
+import lib.sRAD.gui.component.DTII1Border
+import lib.sRAD.gui.component.DTII3
 import java.awt.Color
 import java.awt.Component
 import java.awt.Graphics

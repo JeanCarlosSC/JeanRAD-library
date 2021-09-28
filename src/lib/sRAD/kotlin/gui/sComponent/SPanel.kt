@@ -1,7 +1,7 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.Theme.pB
-import lib.sRAD.kotlin.gui.component.Theme.pBg
+import lib.sRAD.gui.component.Theme.pB
+import lib.sRAD.gui.component.Theme.pBg
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.LayoutManager

@@ -1,9 +1,9 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.Theme.btBg
-import lib.sRAD.kotlin.gui.component.Theme.fFg
-import lib.sRAD.kotlin.gui.component.Theme.pB
-import lib.sRAD.kotlin.gui.component.fontText
+import lib.sRAD.gui.component.Theme.btBg
+import lib.sRAD.gui.component.Theme.fFg
+import lib.sRAD.gui.component.Theme.pB
+import lib.sRAD.gui.component.fontText
 import javax.swing.JComboBox
 import java.awt.Font
 import java.awt.Color

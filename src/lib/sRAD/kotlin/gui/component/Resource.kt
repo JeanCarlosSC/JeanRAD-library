@@ -1,4 +1,4 @@
-package lib.sRAD.kotlin.gui.component
+package lib.sRAD.gui.component
 
 import java.awt.Color
 import java.awt.Cursor

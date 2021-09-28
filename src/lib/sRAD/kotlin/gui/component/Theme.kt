@@ -1,6 +1,6 @@
-package lib.sRAD.kotlin.gui.component
+package lib.sRAD.gui.component
 
-import lib.sRAD.kotlin.gui.component.*
+import lib.sRAD.gui.component.*
 import java.awt.Color
 import javax.swing.border.Border
 

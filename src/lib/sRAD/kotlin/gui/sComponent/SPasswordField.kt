@@ -1,8 +1,8 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.DTII4Border
-import lib.sRAD.kotlin.gui.component.Theme
-import lib.sRAD.kotlin.gui.component.fontText
+import lib.sRAD.gui.component.DTII4Border
+import lib.sRAD.gui.component.Theme
+import lib.sRAD.gui.component.fontText
 import java.awt.Color
 import java.awt.Font
 import javax.swing.JPasswordField

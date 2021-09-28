@@ -1,6 +1,6 @@
-package lib.sRAD.kotlin.gui.sComponent
+package lib.sRAD.gui.sComponent
 
-import lib.sRAD.kotlin.gui.component.*
+import lib.sRAD.gui.component.*
 import javax.swing.JButton
 import javax.swing.Icon
 import java.awt.Font
