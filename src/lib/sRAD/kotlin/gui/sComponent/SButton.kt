@@ -48,6 +48,13 @@ open class SButton : JButton {
     /**
      * Text button
      */
+    constructor(x: Int, y: Int, text: String) {
+        setProperties(x, y, text)
+    }
+
+    /**
+     * Text button
+     */
     constructor(x: Int, y: Int, text: String, actionListener: ActionListener) {
         setProperties(x, y, text, actionListener)
     }
@@ -57,6 +64,13 @@ open class SButton : JButton {
      */
     private fun setProperties(x: Int, y: Int, text: String, actionListener: ActionListener) {
         addActionListener(actionListener)
+        setProperties(x, y, 100, 32, text, handCursor, fontTitleMini, Theme.btBg, DTII14, DTII4Border, DTII8, DTII4Border)
+    }
+
+    /**
+     * Text button
+     */
+    private fun setProperties(x: Int, y: Int, text: String) {
         setProperties(x, y, 100, 32, text, handCursor, fontTitleMini, Theme.btBg, DTII14, DTII4Border, DTII8, DTII4Border)
     }
 
