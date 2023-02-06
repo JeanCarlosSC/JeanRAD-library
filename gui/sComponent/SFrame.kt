@@ -30,7 +30,7 @@ open class SFrame(width: Int=1280, height: Int=720) : JFrame() {
     }
 
     fun setMainBar(title: String) {
-        setMainBar(title, "resources/sRAD/logo.png", width)
+        setMainBar(title, "src/main/resources/sRAD/exampleLogo.png", width)
     }
 
     fun setMainBar(title: String, pathLogo: String, width: Int) {
