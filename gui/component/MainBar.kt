@@ -42,10 +42,10 @@ class MainBar (
     }
 
     companion object {
-        private val iBtExitOn = ImageIcon("src/main/resources/sRAD/mainBar/btExitOn.png")
-        private val iBtExitOff = ImageIcon("src/main/resources/sRAD/mainBar/btExitOff.png")
-        private val iBtMinOff = ImageIcon("src/main/resources/sRAD/mainBar/btMinOff.png")
-        private val iBtMinOn = ImageIcon("src/main/resources/sRAD/mainBar/btMinOn.png")
+        private val iBtExitOn = ImageIcon("resources/sRAD/mainBar/btExitOn.png")
+        private val iBtExitOff = ImageIcon("resources/sRAD/mainBar/btExitOff.png")
+        private val iBtMinOff = ImageIcon("resources/sRAD/mainBar/btMinOff.png")
+        private val iBtMinOn = ImageIcon("resources/sRAD/mainBar/btMinOn.png")
         private var btExit: SButton? = null
         private var btMin: SButton? = null
     }
