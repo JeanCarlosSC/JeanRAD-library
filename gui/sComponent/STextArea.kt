@@ -30,7 +30,7 @@ class STextArea : JTextArea {
      * @param text
      */
     constructor(x: Int, y: Int, width: Int, height: Int, text: String?) {
-        setProperties(x, y, width, height, false, true, text, DTII14, null, fontText, null, LEFT_ALIGNMENT)
+        setProperties(x, y, width, height, false, true, text, DTII14, DTII1, fontText, null, LEFT_ALIGNMENT)
     }
 
     fun setProperties(
